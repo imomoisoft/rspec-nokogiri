@@ -19,6 +19,7 @@ module RSpec
 
       def with_value(value)
         @tag_value = value
+        self
       end
 
       def failure_message_for_should
