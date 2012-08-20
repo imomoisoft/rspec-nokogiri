@@ -12,7 +12,7 @@ module RSpec
         tag = @actual.at(@tag_name)
         if @tag_value.nil?
           !tag.nil?
-        else        
+        else
           tag.text == @tag_value
         end
       end
@@ -23,7 +23,7 @@ module RSpec
       end
 
       def failure_message_for_should
-        "expected #{actual} to #{description}"
+        "expected #{@actual} to #{description}"
       end
 
       def failure_message_for_should_not
