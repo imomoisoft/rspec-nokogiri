@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Viacheslav Molokov"]
   s.date = "2012-08-20"
-  s.description = "TODO: longer description of your gem"
+  s.description = "RSpec Matchers for Nokogori"
   s.email = "viacheslav.molokov@gmail.com"
   s.extra_rdoc_files = [
     "README.md"
@@ -25,11 +25,11 @@ Gem::Specification.new do |s|
     "lib/rspec/nokogiri/have_tag.rb",
     "lib/rspec/nokogiri/have_tag_matcher.rb"
   ]
-  s.homepage = "http://github.com/Imomoi/rspec-nokogiri"
+  s.homepage = "https://github.com/imomoisoft/rspec-nokogiri"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = "1.8.24"
-  s.summary = "TODO: one-line summary of your gem"
+  s.summary = "RSpec Matchers for Nokogori"
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
