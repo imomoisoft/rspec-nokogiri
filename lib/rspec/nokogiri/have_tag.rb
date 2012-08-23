@@ -9,11 +9,11 @@ module RSpec
       def matches?(actual)
         @actual = actual
 
-        tag = @actual.at(@tag_name)
+        tag = @actual.xpath(@tag_name)
         if @tag_value.nil?
           !tag.nil?
         else
-          tag.text == @tag_value
+          tag.text == @tag_value.to_s
         end
       end
 
