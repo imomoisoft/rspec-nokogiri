@@ -10,7 +10,7 @@ module RSpec
         @actual = actual
 
         tag = @actual.xpath(@tag_name)
-        if @tag_value.nil?
+        if @tag_value.nil? || tag.nil?
           !tag.nil?
         else
           tag.text == @tag_value.to_s
