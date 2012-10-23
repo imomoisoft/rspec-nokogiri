@@ -10,9 +10,10 @@ module RSpec
         @actual = actual
 
         tag = @actual.xpath(@tag_name)
-        if @tag_value.nil? || tag.nil?
+        if @tag_value.nil?
           !tag.nil?
         else
+          @actual = tag
           tag.text == @tag_value.to_s
         end
       end
@@ -23,7 +24,7 @@ module RSpec
       end
 
       def failure_message_for_should
-        "expected #{@actual} to #{description}"
+        "expected:\n#{@actual} to #{description}"
       end
 
       def failure_message_for_should_not
@@ -32,9 +33,10 @@ module RSpec
 
       def description
         if @tag_value.nil?
-          "have tag #{@tag_name}"
+          "have tag '#{@tag_name}'"
         else
-          "have tag #{@tag_name} with value #{@tag_value}"
+          # "have tag '#{@tag_name}' with value '#{@tag_value}'"
+          "have value '#{@tag_value}'"
         end
       end
 
