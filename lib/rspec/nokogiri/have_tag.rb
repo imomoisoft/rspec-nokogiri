@@ -9,12 +9,12 @@ module RSpec
       def matches?(actual)
         @actual = actual
 
-        tag = @actual.xpath(@tag_name)
-        if @tag_value.nil?
-          !tag.nil?
+        @tag = @actual.xpath(@tag_name)
+        if @tag_value.nil? || @tag.empty?
+          !@tag.empty?
         else
-          @actual = tag
-          tag.text == @tag_value.to_s
+          @actual = @tag
+          @tag.text == @tag_value.to_s
         end
       end
 
@@ -34,8 +34,9 @@ module RSpec
       def description
         if @tag_value.nil?
           "have tag '#{@tag_name}'"
+        elsif @tag.empty?
+          "have tag '#{@tag_name}' with value '#{@tag_value}'"
         else
-          # "have tag '#{@tag_name}' with value '#{@tag_value}'"
           "have value '#{@tag_value}'"
         end
       end
